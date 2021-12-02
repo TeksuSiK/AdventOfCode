@@ -13,10 +13,12 @@ public class Day02 extends Challenge {
         int horizontalPosition = 0;
         for (int x = 0; x < this.getLines().size(); x++) {
             String[] line = this.getLines().get(x).split(" ");
+            int value = Integer.parseInt(line[1]);
+
             switch (line[0]) {
-                case "forward" -> horizontalPosition = horizontalPosition + Integer.parseInt(line[1]);
-                case "down" -> depth = depth + Integer.parseInt(line[1]);
-                case "up" -> depth = depth - Integer.parseInt(line[1]);
+                case "forward" -> horizontalPosition += value;
+                case "down" -> depth += value;
+                case "up" -> depth -= value;
             }
         }
 
@@ -30,13 +32,15 @@ public class Day02 extends Challenge {
         int aim = 0;
         for (int x = 0; x < this.getLines().size(); x++) {
             String[] line = this.getLines().get(x).split(" ");
+            int value = Integer.parseInt(line[1]);
+
             switch (line[0]) {
                 case "forward" -> {
-                    horizontalPosition = horizontalPosition + Integer.parseInt(line[1]);
-                    depth = depth + (aim * Integer.parseInt(line[1]));
+                    horizontalPosition += value;
+                    depth += (aim * value);
                 }
-                case "down" -> aim = aim + Integer.parseInt(line[1]);
-                case "up" -> aim = aim - Integer.parseInt(line[1]);
+                case "down" -> aim += value;
+                case "up" -> aim -= value;
             }
         }
 
