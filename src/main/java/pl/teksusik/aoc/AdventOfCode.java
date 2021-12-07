@@ -6,6 +6,7 @@ import pl.teksusik.aoc.challenge.Day03;
 import pl.teksusik.aoc.challenge.Day04;
 import pl.teksusik.aoc.challenge.Day05;
 import pl.teksusik.aoc.challenge.Day06;
+import pl.teksusik.aoc.challenge.Day07;
 
 public class AdventOfCode {
     public static void main(String[] args) {
@@ -17,6 +18,7 @@ public class AdventOfCode {
         challengeService.addChallenge(new Day04(4, "04.txt"));
         challengeService.addChallenge(new Day05(5, "05.txt"));
         challengeService.addChallenge(new Day06(6, "06.txt"));
+        challengeService.addChallenge(new Day07(7, "07.txt"));
 
         if (args.length == 0) {
             challengeService.runAllChallenges();
