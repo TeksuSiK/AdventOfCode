@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +27,15 @@ public abstract class Challenge {
         return day;
     }
 
-    public File getInput() {
+
+    public String getInput() {
+        String input = null;
+        try {
+            input = Files.readString(this.input.toPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
         return input;
     }
 
