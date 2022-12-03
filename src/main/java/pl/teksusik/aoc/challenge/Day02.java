@@ -2,9 +2,6 @@ package pl.teksusik.aoc.challenge;
 
 import pl.teksusik.aoc.Challenge;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Day02 extends Challenge {
     public Day02(int day, String input) {
         super(day, input);
@@ -12,36 +9,34 @@ public class Day02 extends Challenge {
 
     @Override
     public String solveFirstPart() {
-        List<Long> scores = new ArrayList<>();
-        this.getLines().forEach(line -> {
-            String[] moves = line.split(" ");
-            String opponent = moves[0];
-            String selection = moves[1];
+        long sum = this.getLines()
+                .stream()
+                .map(line -> line.split(" "))
+                .map(moves -> {
+                    Game game = new Game(moves[0]);
+                    game.setSelection(Game.getShape(moves[1]));
+                    return game;
+                })
+                .mapToLong(Game::getScore)
+                .sum();
 
-            Game game = new Game(opponent);
-            game.setSelection(Game.getShape(selection));
-            scores.add(game.getScore());
-        });
-
-        long sum = scores.stream().mapToLong(Long::longValue).sum();
         return String.valueOf(sum);
     }
 
     @Override
     public String solveSecondPart() {
-        List<Long> scores = new ArrayList<>();
-        this.getLines().forEach(line -> {
-            String[] moves = line.split(" ");
-            String opponent = moves[0];
-            String result = moves[1];
+        long sum = this.getLines()
+                .stream()
+                .map(line -> line.split(" "))
+                .map(moves -> {
+                    Game game = new Game(moves[0]);
+                    game.setResult(moves[1]);
+                    game.chooseShape();
+                    return game;
+                })
+                .mapToLong(Game::getScore)
+                .sum();
 
-            Game game = new Game(opponent);
-            game.setResult(result);
-            game.chooseShape();
-            scores.add(game.getScore());
-        });
-
-        long sum = scores.stream().mapToLong(Long::longValue).sum();
         return String.valueOf(sum);
     }
 
@@ -50,7 +45,7 @@ public class Day02 extends Challenge {
     }
 
     public enum Result {
-        LOST, DRAW, WON
+        LOST, DRAW, WON;
     }
 
     public class Game {
