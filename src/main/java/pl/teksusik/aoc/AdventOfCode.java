@@ -3,6 +3,7 @@ package pl.teksusik.aoc;
 import pl.teksusik.aoc.challenge.Day01;
 import pl.teksusik.aoc.challenge.Day02;
 import pl.teksusik.aoc.challenge.Day03;
+import pl.teksusik.aoc.challenge.Day04;
 
 public class AdventOfCode {
     public static void main(String[] args) {
@@ -11,6 +12,7 @@ public class AdventOfCode {
         challengeService.addChallenge(new Day01(1, "01.txt"));
         challengeService.addChallenge(new Day02(2, "02.txt"));
         challengeService.addChallenge(new Day03(3, "03.txt"));
+        challengeService.addChallenge(new Day04(4, "04.txt"));
 
         if (args.length == 0) {
             challengeService.runAllChallenges();
