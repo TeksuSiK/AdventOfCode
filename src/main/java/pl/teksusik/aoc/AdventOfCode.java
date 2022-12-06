@@ -11,6 +11,7 @@ public class AdventOfCode {
         challengeService.addChallenge(new Day03(3, "03.txt"));
         challengeService.addChallenge(new Day04(4, "04.txt"));
         challengeService.addChallenge(new Day05(5, "05.txt"));
+        challengeService.addChallenge(new Day06(6, "06.txt"));
 
         if (args.length == 0) {
             challengeService.runAllChallenges();
