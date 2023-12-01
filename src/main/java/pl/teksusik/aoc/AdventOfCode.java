@@ -6,18 +6,6 @@ public class AdventOfCode {
     public static void main(String[] args) {
         ChallengeService challengeService = new ChallengeService();
 
-        challengeService.addChallenge(new Day01(1, "01.txt"));
-        challengeService.addChallenge(new Day02(2, "02.txt"));
-        challengeService.addChallenge(new Day03(3, "03.txt"));
-        challengeService.addChallenge(new Day04(4, "04.txt"));
-        challengeService.addChallenge(new Day05(5, "05.txt"));
-        challengeService.addChallenge(new Day06(6, "06.txt"));
-        challengeService.addChallenge(new Day07(7, "07.txt"));
-        challengeService.addChallenge(new Day08(8, "08.txt"));
-        challengeService.addChallenge(new Day09(9, "09.txt"));
-        challengeService.addChallenge(new Day10(10, "10.txt"));
-        challengeService.addChallenge(new Day11(11, "11.txt"));
-
         if (args.length == 0) {
             challengeService.runAllChallenges();
             return;
