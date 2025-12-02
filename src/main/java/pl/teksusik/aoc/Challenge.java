@@ -27,7 +27,6 @@ public abstract class Challenge {
         return day;
     }
 
-
     public String getInput() {
         String input = null;
         try {
