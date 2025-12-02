@@ -6,7 +6,7 @@ public class AdventOfCode {
     public static void main(String[] args) {
         ChallengeService challengeService = new ChallengeService();
 
-//        challengeService.addChallenge(new Day01(1, "01.txt"));
+        challengeService.addChallenge(new Day01(1, "01.txt"));
 
         if (args.length == 0) {
             challengeService.runAllChallenges();
